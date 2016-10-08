@@ -1,0 +1,76 @@
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+
+C:\>cd tasm
+
+C:\Tasm>tasm assg4.asm
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   assg4.asm
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  471k
+
+
+C:\Tasm>tlink assg4.obj
+Turbo Link  Version 3.0 Copyright (c) 1987, 1990 Borland International
+Warning: No stack
+
+C:\Tasm>assg4.exe
+
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :1
+Enter string :hello WORLD
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :2
+The length is :B
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :3
+The reversed string is :DLROW olleh
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :4
+Not palindrome.
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :5
+Number of words :2
+Number of capital letters :5
+Number of small letters :5
+    ~~~~MENU~~~~
+1.Enter a string
+2.Display length of string
+3.Reverse the string
+4.Check palindrome
+5.Find number of words,capital letters,small letters
+6.Exit
+Enter a choice :6
