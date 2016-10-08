@@ -1,0 +1,25 @@
+---------------OUTPUT-------------------
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+
+C:\>cd tasm
+
+C:\Tasm>tasm assg6.asm
+Turbo Assembler  Version 2.0  Copyright (c) 1988, 1990 Borland International
+
+Assembling file:   assg6.asm
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  475k
+
+
+C:\Tasm>tlink assg6.obj
+Turbo Link  Version 3.0 Copyright (c) 1987, 1990 Borland International
+Warning: No stack
+
+C:\Tasm>assg6.exe
+
+Enter 1st number :12
+Enter 2nd number :12
+Multiplication result :0144
