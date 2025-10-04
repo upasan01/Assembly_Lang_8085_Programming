@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog Directory</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'hf-orange': '#FF8C00', /* Hacktoberfest orange */
+                        'hf-dark': '#1e293b',  /* Slate dark background */
+                    }
+                },
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Slate 100 */
+        }
+        .card {
+            transition: all 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8 bg-slate-50">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-hf-dark mb-2 tracking-tight">
+                📚 Must-Read Tech Blogs
+            </h1>
+            <p class="text-xl text-gray-600">
+                A community-curated list of great technical resources.
+            </p>
+        </header>
+
+        <!-- Contribution Guidance -->
+        <div class="bg-hf-orange/10 border-l-4 border-hf-orange p-4 rounded-lg mb-8 shadow-inner">
+            <p class="text-gray-700 font-medium">
+                ✨ **Hacktoberfest Contribution Point:** To contribute, simply add a new object to the `techBlogs` array in the script tag below! Include a `name` and a valid `url`.
+            </p>
+        </div>
+        
+        <!-- Blog List Container -->
+        <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Blog cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+
+    <script>
+        // --- HACKTOBERFEST CONTRIBUTION POINT: ADD NEW BLOGS HERE ---
+        const techBlogs = [
+            { name: "Google AI Blog", url: "https://ai.googleblog.com/" },
+            { name: "Mozilla Hacks", url: "https://hacks.mozilla.org/" },
+            { name: "AWS Developer Blog", url: "https://aws.amazon.com/blogs/developer/" },
+            { name: "FreeCodeCamp News", url: "https://www.freecodecamp.org/news/" },
+            { name: "Smashing Magazine", url: "https://www.smashingmagazine.com/" },
+            { name: "A List Apart", url: "https://alistapart.com/" },
+            { name: "CSS-Tricks", url: "https://css-tricks.com/" },
+            // Add your favorite tech blog here! Example:
+            // { name: "Your Favorite Blog", url: "https://yourblog.com" },
+        ];
+        // -----------------------------------------------------------
+
+        const blogListContainer = document.getElementById('blog-list');
+
+        /**
+         * Renders the list of blogs from the techBlogs array into the DOM.
+         */
+        function renderBlogs() {
+            // Clear existing content
+            blogListContainer.innerHTML = '';
+
+            if (techBlogs.length === 0) {
+                blogListContainer.innerHTML = '<p class="col-span-3 text-center text-gray-500">No blogs added yet!</p>';
+                return;
+            }
+
+            techBlogs.forEach(blog => {
+                const cardHtml = `
+                    <a href="${blog.url}" target="_blank" rel="noopener noreferrer" 
+                       class="card block p-6 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-hf-orange/50">
+                        <div class="flex items-center space-x-4">
+                            <!-- Simple icon using inline SVG or emoji -->
+                            <span class="text-3xl" role="img" aria-label="Book Icon">
+                                📖
+                            </span>
+                            <div>
+                                <h2 class="text-xl font-semibold text-gray-900 truncate">
+                                    ${blog.name}
+                                </h2>
+                                <p class="text-sm text-hf-orange hover:text-orange-600 truncate">
+                                    ${blog.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                blogListContainer.innerHTML += cardHtml;
+            });
+        }
+
+        // Initialize the display when the window loads
+        window.onload = renderBlogs;
+    </script>
+</body>
+</html>
